@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Justin Sears | Edges of Insanity • Recovery in Motion • Movement &amp; Storytelling</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&amp;family=Inter:wght@300;400;500;600&amp;display=swap');
+        
+        :root {
+            --gold: #C9A227;
+        }
+        
+        .gold {
+            color: #C9A227;
+        }
+        
+        .gold-bg {
+            background-color: #C9A227;
+        }
+        
+        .section-header {
+            font-family: 'Playfair Display', Georgia, serif;
+            letter-spacing: -0.02em;
+        }
+
+        .nav-link {
+            transition: color 0.2s ease;
+        }
+        
+        .nav-link:hover {
+            color: #C9A227;
+        }
+
+        .dance-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .dance-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        }
+
+        .hero-bg {
+            background-image: linear-gradient(rgba(15, 15, 15, 0.45), rgba(15, 15, 15, 0.35)), url('images/hero-real.jpg');
+            background-size: cover;
+            background-position: center 25%;
+            background-attachment: fixed;
+        }
+
+        .stat-number {
+            font-variant-numeric: tabular-nums;
+        }
+
+        .modal {
+            animation: modalPopIn 0.2s ease-out forwards;
+        }
+
+        @keyframes modalPopIn {
+            from {
+                opacity: 0;
+                transform: scale(0.95) translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+
+        .nav-scrolled {
+            background-color: rgba(15, 15, 15, 0.95);
+            backdrop-filter: blur(12px);
+        }
+
+        .gold-button {
+            transition: all 0.2s ease;
+        }
+        
+        .gold-button:hover {
+            background-color: #A67C00;
+            transform: translateY(-1px);
+        }
+
+        .outline-gold {
+            border-color: #C9A227;
+            color: #C9A227;
+        }
+        
+        .outline-gold:hover {
+            background-color: #C9A227;
+            color: #0f0f0f;
+        }
+
+        .dance-grid {
+            scrollbar-width: none;
+        }
+
+        .section-divider {
+            height: 1px;
+            background: linear-gradient(to right, transparent, #3f3f46, transparent);
+        }
+
+        .impact-stat {
+            transition: transform 0.3s ease;
+        }
+        
+        .impact-stat:hover {
+            transform: scale(1.02);
+        }
+    </style>
+</head>
+<body class="bg-zinc-950 text-white font-sans antialiased">
+    <!-- NAVIGATION -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-zinc-950/90 backdrop-blur-lg border-b border-zinc-800">
+        <div class="max-w-screen-2xl mx-auto">
+            <div class="flex items-center justify-between px-8 py-5">
+                <!-- Logo -->
+                <a href="#hero" class="flex items-center gap-x-3 group">
+                    <div class="flex flex-col items-center justify-center w-11 h-11 border border-[#C9A227] rounded-full">
+                        <span class="font-serif text-3xl leading-none text-[#C9A227] group-hover:scale-105 transition-transform" style="font-family: 'Playfair Display', Georgia, serif;">JS</span>
+                    </div>
+                    <div class="leading-none">
+                        <div class="font-semibold tracking-[3px] text-sm">JUSTIN SEARS</div>
+                        <div class="text-[10px] text-zinc-400 -mt-0.5 tracking-[2px]">DANCE FOUNDATION</div>
+                    </div>
+                </a>
+
+                <!-- Desktop Menu -->
+                <div class="hidden lg:flex items-center gap-x-9 text-sm font-medium tracking-wide">
+                    <a href="#hero" class="nav-link text-zinc-300 hover:text-white">HOME</a>
+                    <a href="#about-justin" class="nav-link text-zinc-300 hover:text-white">ABOUT JUSTIN</a>
+                    <a href="#edges-of-insanity" class="nav-link text-zinc-300 hover:text-white">EDGES OF INSANITY</a>
+                    <a href="#recovery-in-motion" class="nav-link text-zinc-300 hover:text-white">RECOVERY IN MOTION</a>
+                    <a href="#media-press" class="nav-link text-zinc-300 hover:text-white">MEDIA &amp; PRESS</a>
+                    <a href="#contact" class="nav-link text-zinc-300 hover:text-white">CONTACT</a>
+                </div>
+
+                <!-- CTA Buttons -->
+                <div class="hidden lg:flex items-center gap-x-3">
+                    <a href="#bring-to-community" 
+                       class="px-5 py-2.5 text-xs font-semibold tracking-widest gold-bg text-zinc-950 rounded-md hover:bg-[#A67C00] transition-colors">
+                        BRING THIS WORK TO YOUR COMMUNITY
+                    </a>
+                    <a href="#contact" 
+                       class="px-5 py-2.5 text-xs font-semibold tracking-widest border border-white/70 hover:bg-white hover:text-zinc-950 transition-colors rounded-md">
+                        CONTACT
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn"
+                        class="lg:hidden w-10 h-10 flex items-center justify-center text-white hover:text-[#C9A227] transition-colors"
+                        aria-label="Toggle menu">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-zinc-900 border-t border-zinc-800">
+            <div class="px-8 py-6 flex flex-col gap-y-4 text-sm font-medium">
+                <a href="#hero" class="mobile-nav-link py-1">HOME</a>
+                <a href="#the-work" class="mobile-nav-link py-1">THE WORK</a>
+                <a href="#about-justin" class="mobile-nav-link py-1">ABOUT JUSTIN</a>
+                <a href="#media-press" class="mobile-nav-link py-1">MEDIA &amp; PRESS</a>
+                <a href="#resources" class="mobile-nav-link py-1">RESOURCES</a>
+                <a href="#impact-partnerships" class="mobile-nav-link py-1">IMPACT &amp; PARTNERSHIPS</a>
+                
+                <div class="pt-4 border-t border-zinc-700 flex flex-col gap-y-3">
+                    <a href="#bring-to-community" 
+                       class="block w-full text-center px-5 py-3 text-xs font-semibold tracking-widest gold-bg text-zinc-950 rounded-md">
+                        BRING THIS WORK TO YOUR COMMUNITY
+                    </a>
+                    <a href="#contact" 
+                       class="block w-full text-center px-5 py-3 text-xs font-semibold tracking-widest border border-white/70 rounded-md">
+                        CONTACT
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <header id="hero" class="hero-bg min-h-[100dvh] flex items-center pt-16 relative">
+        <div class="max-w-screen-2xl mx-auto px-8 pt-12 pb-20">
+            <div class="max-w-3xl">
+                <h1 class="text-[64px] md:text-[78px] leading-[0.9] font-bold tracking-tighter mb-4">
+                    Edges of Insanity.<br>
+                    Recovery in Motion.<br>
+                    <span class="gold">A story of healing</span><br>
+                    through movement.
+                </h1>
+                
+                <p class="max-w-lg text-xl text-zinc-200 mt-4 mb-10 tracking-tight">
+                    After seeing the news segment, learn more about Justin’s journey,<br>
+                    the work, and how movement and storytelling are helping people heal.
+                </p>
+
+                <div class="flex flex-wrap items-center gap-4">
+                    <button onclick="showVideoModal('hero-video')"
+                            class="flex items-center gap-x-3 px-7 py-[15px] bg-white text-zinc-950 font-semibold text-sm tracking-widest rounded-md hover:bg-zinc-200 transition-all active:scale-[0.985]">
+                        <i class="fa-solid fa-play mr-1"></i>
+                        <span>WATCH THE WORK</span>
+                    </button>
+                    
+                    <a href="#bring-to-community"
+                       class="flex items-center gap-x-3 px-7 py-[15px] border border-white/70 hover:bg-white/10 font-semibold text-sm tracking-widest rounded-md transition-all">
+                        BRING THIS TO YOUR COMMUNITY
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 hidden md:block">
+            <a href="#the-work" class="flex flex-col items-center text-xs tracking-[3px] text-white/60 hover:text-white transition-colors">
+                <span class="mb-1">SCROLL TO EXPLORE</span>
+                <i class="fa-solid fa-chevron-down text-lg animate-bounce"></i>
+            </a>
+        </div>
+    </header>
+
+    <!-- ONE BODY OF WORK / MANY POINTS OF ENTRY -->
+    <section id="the-work" class="max-w-screen-2xl mx-auto px-8 pt-16 pb-12 bg-zinc-900">
+        <div class="max-w-5xl mx-auto">
+            <div class="flex flex-col items-center text-center mb-12">
+                <div class="uppercase tracking-[4px] text-xs text-[#C9A227] font-semibold mb-2">ONE BODY OF WORK.</div>
+                <h2 class="text-6xl md:text-7xl font-bold tracking-tighter section-header">Many Points of Entry.</h2>
+                <p class="mt-4 max-w-lg text-lg text-zinc-400">
+                    Some people encounter this work through a performance.<br>
+                    Some through education. Some through dialogue.<br>
+                    Some through community engagement.<br>
+                    But they're all entering the same conversation.
+                </p>
+            </div>
+
+            <!-- 4 Entry Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+                <!-- Artist -->
+                <div class="dance-card bg-zinc-950 border border-zinc-800 rounded-2xl overflow-hidden flex flex-col">
+                    <div class="relative h-72">
+                        <img src="images/card-1-artist.jpg" alt="Justin Sears-Watson in powerful dance pose" 
+                             class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-b from-black/30 via-black/10 to-black/70"></div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col">
+                        <div>
+                            <div class="uppercase text-[#C9A227] text-xs tracking-[2px] font-semibold mb-1">ARTIST</div>
+                            <h3 class="font-semibold text-2xl tracking-tight mb-3">Creating powerful performances that move and inspire.</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Community Engagement -->
+                <div class="dance-card bg-zinc-950 border border-zinc-800 rounded-2xl overflow-hidden flex flex-col">
+                    <div class="relative h-72">
+                        <img src="images/card-2-community.jpg" alt="Justin with young ballet students" 
+                             class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-b from-black/20 via-black/5 to-black/70"></div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col">
+                        <div>
+                            <div class="uppercase text-[#C9A227] text-xs tracking-[2px] font-semibold mb-1">COMMUNITY ENGAGEMENT</div>
+                            <h3 class="font-semibold text-2xl tracking-tight mb-3">Building connections and strengthening communities.</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recovery & Healing -->
+                <div class="dance-card bg-zinc-950 border border-zinc-800 rounded-2xl overflow-hidden flex flex-col">
+                    <div class="relative h-72">
+                        <img src="images/card-3-recovery.jpg" alt="Justin in dynamic performance under dramatic lighting" 
+                             class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-b from-black/30 via-black/10 to-black/70"></div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col">
+                        <div>
+                            <div class="uppercase text-[#C9A227] text-xs tracking-[2px] font-semibold mb-1">RECOVERY &amp; HEALING</div>
+                            <h3 class="font-semibold text-2xl tracking-tight mb-3">Movement and storytelling as tools for healing.</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Speaking & Education -->
+                <div class="dance-card bg-zinc-950 border border-zinc-800 rounded-2xl overflow-hidden flex flex-col">
+                    <div class="relative h-72">
+                        <img src="images/card-4-speaking.jpg" alt="Justin engaging with young participants in dance studio" 
+                             class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-b from-black/30 via-black/10 to-black/70"></div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col">
+                        <div>
+                            <div class="uppercase text-[#C9A227] text-xs tracking-[2px] font-semibold mb-1">SPEAKING &amp; EDUCATION</div>
+                            <h3 class="font-semibold text-2xl tracking-tight mb-3">Conversations and workshops that spark transformation.</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT JUSTIN SECTION -->
+    <section id="about-justin" class="max-w-screen-2xl mx-auto bg-zinc-900">
+        <div class="grid lg:grid-cols-12">
+            <!-- Photo -->
+            <div class="lg:col-span-5 relative">
+                <img src="images/justin-portrait-real.jpg" alt="Justin Sears-Watson — Choreographer, Educator &amp; Creative Catalyst" 
+                     class="w-full h-full object-cover lg:min-h-[620px]">
+                <div class="absolute inset-0 bg-gradient-to-r from-zinc-900/50 via-zinc-900/10 to-transparent lg:hidden"></div>
+            </div>
+            
+            <!-- Content -->
+            <div class="lg:col-span-7 px-8 py-14 lg:py-16 lg:pr-16">
+                <div class="max-w-2xl">
+                    <div class="uppercase tracking-[3px] text-xs text-[#C9A227] font-semibold mb-2">ABOUT JUSTIN</div>
+                    
+                    <h2 class="text-5xl lg:text-6xl font-bold tracking-tighter section-header leading-none mb-6">
+                        Choreographer.<br>Educator.<br>Creative Catalyst.
+                    </h2>
+                    
+                    <div class="prose prose-invert text-[15.5px] leading-relaxed text-zinc-300 max-w-prose space-y-4">
+                        <p>Justin Sears-Watson is a choreographer, educator, and creative catalyst whose work lives at the intersection of movement, storytelling, recovery, and human connection. Through dance, dialogue, and collaborative art-making, he creates experiences that invite individuals and communities to explore resilience, identity, healing, and transformation.</p>
+                        
+                        <p>He is the creator of <strong>Edges of Insanity</strong> and <strong>Recovery in Motion</strong> — multidisciplinary projects that use movement and storytelling as powerful tools for healing, self-expression, and connection, especially in recovery and community settings.</p>
+                        
+                        <p>His work has been supported by the Herbert Simon Family Foundation, Central Indiana Community Foundation, Allied Solutions New Works Commission, Jacob’s Pillow, and Arts for Learning Indiana. He partners with recovery centers including Avenues Recovery and LaDoga Recovery to bring movement-based programming to those on the path of healing.</p>
+                    </div>
+                    
+                    <div class="mt-8 flex flex-wrap gap-3">
+                        <a href="#edges-of-insanity" 
+                           class="inline-flex items-center px-6 py-3 text-sm font-semibold tracking-widest gold-bg text-zinc-950 rounded-md hover:bg-[#A67C00] transition-colors">
+                            WATCH EDGES OF INSANITY
+                        </a>
+                        <a href="#recovery-in-motion" 
+                           class="inline-flex items-center px-6 py-3 text-sm font-semibold tracking-widest border border-white/70 hover:bg-white hover:text-zinc-950 rounded-md transition-colors">
+                            RECOVERY IN MOTION
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURED WORK + BRING TO COMMUNITY -->
+    <section id="featured-work" class="max-w-screen-2xl mx-auto px-8 pt-16 pb-12 bg-zinc-950">
+        <div class="max-w-screen-2xl mx-auto">
+            <div class="grid lg:grid-cols-12 gap-x-8 gap-y-10">
+                
+                <!-- Featured Work -->
+                <div class="lg:col-span-7">
+                    <div class="uppercase tracking-[3px] text-xs text-[#C9A227] font-semibold mb-3">FEATURED WORK</div>
+                    <h3 class="text-5xl font-bold tracking-tighter mb-4 section-header">Edges of Insanity</h3>
+                    <p class="text-lg text-zinc-400 max-w-md mb-6">
+                        A performance film and storytelling project exploring the edges of mental health, recovery, and humanity.
+                    </p>
+                    
+                    <div class="relative rounded-2xl overflow-hidden shadow-2xl">
+                        <img src="images/edges-performance.jpg" alt="Justin Sears-Watson in Edges of Insanity" 
+                             class="w-full aspect-video object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-b from-black/20 to-black/60"></div>
+                        
+                        <!-- Vimeo Embed -->
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <iframe src="https://player.vimeo.com/video/1202516891?h=245c2c2b41&amp;title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" 
+                                    width="100%" height="100%" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen 
+                                    class="rounded-2xl shadow-xl" style="max-width: 92%; max-height: 92%;"></iframe>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-4">
+                        <button onclick="showVideoModal('edges-of-insanity')"
+                                class="text-sm font-semibold tracking-widest inline-flex items-center gap-x-2 text-[#C9A227] hover:text-[#A67C00]">
+                            <span>WATCH NOW</span>
+                            <i class="fa-solid fa-play text-xs"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Bring This Work -->
+                <div id="bring-to-community" class="lg:col-span-5 bg-zinc-900 border border-zinc-800 rounded-3xl p-9 flex flex-col">
+                    <div class="uppercase tracking-[3px] text-xs text-[#C9A227] font-semibold mb-2">BRING THIS WORK TO YOUR COMMUNITY</div>
+                    <h3 class="text-4xl font-bold tracking-tighter mb-6">Let's start a conversation.</h3>
+                    
+                    <p class="text-zinc-400 mb-8">Workshops, performances, and conversations for schools, treatment centers, organizations, conferences, and communities.</p>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-y-3 text-sm mb-auto">
+                        <div class="flex items-start gap-x-3">
+                            <i class="fa-solid fa-school mt-1 text-[#C9A227]"></i>
+                            <span>Schools &amp; Universities</span>
+                        </div>
+                        <div class="flex items-start gap-x-3">
+                            <i class="fa-solid fa-hospital-user mt-1 text-[#C9A227]"></i>
+                            <span>Treatment Centers</span>
+                        </div>
+                        <div class="flex items-start gap-x-3">
+                            <i class="fa-solid fa-users mt-1 text-[#C9A227]"></i>
+                            <span>Nonprofits &amp; Community Orgs</span>
+                        </div>
+                        <div class="flex items-start gap-x-3">
+                            <i class="fa-solid fa-book mt-1 text-[#C9A227]"></i>
+                            <span>Libraries &amp; Cultural Institutions</span>
+                        </div>
+                        <div class="flex items-start gap-x-3">
+                            <i class="fa-solid fa-calendar-check mt-1 text-[#C9A227]"></i>
+                            <span>Conferences &amp; Events</span>
+                        </div>
+                    </div>
+                    
+                    <div class="pt-8 mt-auto">
+                        <button onclick="showContactModal()"
+                           class="inline-block w-full text-center px-8 py-4 text-sm font-semibold tracking-[2px] gold-bg text-zinc-950 rounded-xl hover:bg-[#A67C00] transition-colors">
+                            LET'S CONNECT
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MEDIA & PRESS -->
+    <section id="media-press" class="max-w-screen-2xl mx-auto px-8 py-16 bg-zinc-900">
+        <div class="flex items-end justify-between mb-8">
+            <div>
+                <div class="uppercase tracking-[3px] text-xs text-[#C9A227] font-semibold">MEDIA &amp; PRESS</div>
+                <h3 class="text-5xl font-bold tracking-tighter">In the News</h3>
+            </div>
+            <!-- VIEW ALL PRESS link hidden until page is built -->
+        </div>
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            <!-- Tom Alvarez -->
+            <a href="https://tomalvarez.studio/2020/06/09/justin-sears-watson-is-a-phoenix-rising/" target="_blank" class="group block bg-zinc-950 border border-zinc-800 rounded-2xl overflow-hidden hover:border-[#C9A227]/60 transition-all">
+                <div class="h-48 overflow-hidden">
+                    <img src="images/dance-pose-black.jpg" alt="Justin Sears-Watson performance" class="w-full h-full object-cover group-hover:scale-105 transition-transform">
+                </div>
+                <div class="p-5">
+                    <div class="text-xs text-[#C9A227] font-medium tracking-wider">TOM ALVAREZ STUDIO</div>
+                    <div class="font-semibold text-lg mt-1">Justin Sears-Watson is a Phoenix Rising</div>
+                    <div class="text-xs text-zinc-400 mt-2">Featured interview on his journey and artistic practice.</div>
+                </div>
+            </a>
+
+            <!-- WTHR News -->
+            <a href="https://www.wthr.com/article/news/local/indiana/inspiring-indiana/the-phoenix-rises-justin-sears-watson-uses-dance-to-rise-from-the-ashes-of-his-past/531-73aff087-cb80-46d4-966e-45d0cc79c4cc" target="_blank" class="group block bg-zinc-950 border border-zinc-800 rounded-2xl overflow-hidden hover:border-[#C9A227]/60 transition-all">
+                <div class="h-48 overflow-hidden">
+                    <img src="images/workshop-community.jpg" alt="Justin with community" class="w-full h-full object-cover group-hover:scale-105 transition-transform">
+                </div>
+                <div class="p-5">
+                    <div class="text-xs text-[#C9A227] font-medium tracking-wider">WTHR NEWS</div>
+                    <div class="font-semibold text-lg mt-1">The Phoenix Rises</div>
+                    <div class="text-xs text-zinc-400 mt-2">Inspiring Indiana feature on how Justin uses dance to rise from the ashes of his past.</div>
+                </div>
+            </a>
+
+            <!-- NUVO -->
+            <a href="https://www.nuvo.net/arts/behind-phoenix-rising-s-this-is-america/article_7c8b8028-3165-11e9-9ff7-bbd08e2f3968.html" target="_blank" class="group block bg-zinc-950 border border-zinc-800 rounded-2xl overflow-hidden hover:border-[#C9A227]/60 transition-all">
+                <div class="h-48 overflow-hidden">
+                    <img src="images/edges-performance.jpg" alt="Justin in performance" class="w-full h-full object-cover group-hover:scale-105 transition-transform">
+                </div>
+                <div class="p-5">
+                    <div class="text-xs text-[#C9A227] font-medium tracking-wider">NUVO</div>
+                    <div class="font-semibold text-lg mt-1">Behind Phoenix Rising's 'This Is America'</div>
+                    <div class="text-xs text-zinc-400 mt-2">Feature on the powerful performance project.</div>
+                </div>
+            </a>
+
+            <!-- COVID-19 Archive / Somatic Movement -->
+            <a href="http://covid-19archive.org/s/archive/item/50857" target="_blank" class="group block bg-zinc-950 border border-zinc-800 rounded-2xl overflow-hidden hover:border-[#C9A227]/60 transition-all">
+                <div class="h-48 overflow-hidden">
+                    <img src="images/recovery-healing.jpg" alt="Artistic dance image" class="w-full h-full object-cover group-hover:scale-105 transition-transform">
+                </div>
+                <div class="p-5">
+                    <div class="text-xs text-[#C9A227] font-medium tracking-wider">COVID-19 ARCHIVE</div>
+                    <div class="font-semibold text-lg mt-1">Somatic Movement and Creative Resilience</div>
+                    <div class="text-xs text-zinc-400 mt-2">Archived feature on movement as a tool for resilience during challenging times.</div>
+                </div>
+            </a>
+        </div>
+        
+        <!-- Mobile VIEW ALL PRESS link hidden until page is built -->
+    </section>
+
+    <!-- WHAT IS RECOVERY IN MOTION -->
+    <section id="recovery-in-motion" class="max-w-screen-2xl mx-auto px-8 py-16 bg-zinc-950 border-t border-zinc-800">
+        <div class="max-w-4xl mx-auto text-center">
+            <div class="uppercase tracking-[3px] text-xs text-[#C9A227] font-semibold mb-2">THE INITIATIVE</div>
+            <h2 class="text-6xl font-bold tracking-tighter mb-4">What Is Recovery in Motion?</h2>
+            <p class="text-2xl text-[#C9A227] mb-8">A national movement rooted in recovery, art, and human connection.</p>
+            
+            <div class="prose prose-invert text-lg text-zinc-300 max-w-3xl mx-auto text-left">
+                <p>Recovery in Motion is a pioneering project that utilizes movement as a primary tool for healing, self-expression, and connection. We believe that the body holds stories that words cannot express, and that somatic movement can unlock deep pathways to recovery and transformation.</p>
+                
+                <p>Through community workshops, performance residencies, and public conversations, we empower individuals to reclaim their physical agency, share their lived experiences, and build supportive networks of healing.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- BRING RECOVERY IN MOTION TO YOUR COMMUNITY -->
+    <section class="max-w-screen-2xl mx-auto px-8 pb-16 bg-zinc-900">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-10">
+                <h2 class="text-5xl font-bold tracking-tighter">Bring Recovery in Motion to Your Community</h2>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+                <!-- Community Workshops -->
+                <div class="bg-zinc-950 border border-zinc-800 rounded-3xl p-8">
+                    <div class="text-[#C9A227] text-3xl mb-4">👥</div>
+                    <h4 class="font-semibold text-2xl tracking-tight mb-3">Community Workshops</h4>
+                    <p class="text-zinc-400">Inclusive, multi-generational movement sessions designed for public libraries, schools, and community centers to foster connection and empathy.</p>
+                </div>
+
+                <!-- Recovery Workshops -->
+                <div class="bg-zinc-950 border border-zinc-800 rounded-3xl p-8">
+                    <div class="text-[#C9A227] text-3xl mb-4">➕</div>
+                    <h4 class="font-semibold text-2xl tracking-tight mb-3">Recovery Workshops</h4>
+                    <p class="text-zinc-400">Specialized somatic workshops tailored for treatment centers, behavioral health clinics, and recovery organizations to support clinical healing.</p>
+                </div>
+
+                <!-- Performance Residencies -->
+                <div class="bg-zinc-950 border border-zinc-800 rounded-3xl p-8">
+                    <div class="text-[#C9A227] text-3xl mb-4">$</div>
+                    <h4 class="font-semibold text-2xl tracking-tight mb-3">Performance Residencies</h4>
+                    <p class="text-zinc-400">Collaborative residencies with arts organizations and universities, culminating in a powerful public performance of "Edges of Insanity."</p>
+                </div>
+
+                <!-- Speaking Engagements -->
+                <div class="bg-zinc-950 border border-zinc-800 rounded-3xl p-8">
+                    <div class="text-[#C9A227] text-3xl mb-4">✏️</div>
+                    <h4 class="font-semibold text-2xl tracking-tight mb-3">Speaking Engagements</h4>
+                    <p class="text-zinc-400">Keynotes and panel discussions on somatic healing, lived experience, and the intersection of arts and behavioral health.</p>
+                </div>
+
+                <!-- Educational Programs -->
+                <div class="bg-zinc-950 border border-zinc-800 rounded-3xl p-8">
+                    <div class="text-[#C9A227] text-3xl mb-4">↑</div>
+                    <h4 class="font-semibold text-2xl tracking-tight mb-3">Educational Programs</h4>
+                    <p class="text-zinc-400">Trauma-informed curriculum integration and professional development for clinicians, educators, and arts facilitators.</p>
+                </div>
+            </div>
+
+            <div class="text-center mt-10">
+                <a href="#contact" 
+                   class="inline-flex items-center px-8 py-4 text-sm font-semibold tracking-[2px] gold-bg text-zinc-950 rounded-2xl hover:bg-[#A67C00] transition-colors">
+                    LET'S BRING THIS TO YOUR COMMUNITY
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- IMPACT & PARTNERSHIPS (MOVED TO LAST CONTENT SECTION) -->
+    <section id="impact-partnerships" class="max-w-screen-2xl mx-auto px-8 py-16 bg-zinc-900">
+        <div class="max-w-screen-2xl mx-auto">
+            <div class="uppercase tracking-[3px] text-xs text-[#C9A227] font-semibold mb-3">IMPACT &amp; PARTNERSHIPS</div>
+            <h3 class="text-5xl font-bold tracking-tighter mb-10">Real change, together.</h3>
+            
+            <!-- Stats -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-14">
+                <div class="impact-stat bg-zinc-950 border border-zinc-800 rounded-3xl p-8 text-center">
+                    <div class="text-6xl font-bold tracking-tighter stat-number">20+</div>
+                    <div class="text-sm text-zinc-400 mt-2 tracking-wider">YEARS OF EXPERIENCE</div>
+                </div>
+                <div class="impact-stat bg-zinc-950 border border-zinc-800 rounded-3xl p-8 text-center">
+                    <div class="text-6xl font-bold tracking-tighter stat-number">100+</div>
+                    <div class="text-sm text-zinc-400 mt-2 tracking-wider">COMMUNITIES SERVED</div>
+                </div>
+                <div class="impact-stat bg-zinc-950 border border-zinc-800 rounded-3xl p-8 text-center">
+                    <div class="text-6xl font-bold tracking-tighter stat-number">50K+</div>
+                    <div class="text-sm text-zinc-400 mt-2 tracking-wider">LIVES IMPACTED</div>
+                </div>
+                <div class="impact-stat bg-zinc-950 border border-zinc-800 rounded-3xl p-8 text-center">
+                    <div class="text-6xl font-bold tracking-tighter stat-number">100+</div>
+                    <div class="text-sm text-zinc-400 mt-2 tracking-wider">PARTNERS &amp; COLLABORATORS</div>
+                </div>
+            </div>
+            
+            <!-- Partners -->
+            <div>
+                <div class="uppercase text-xs tracking-[2.5px] text-zinc-500 mb-5 px-1">PROUDLY PARTNERED WITH</div>
+                <div class="flex flex-wrap gap-x-10 gap-y-6 items-center text-sm font-medium text-zinc-300">
+                    <div>Avenues Recovery Centers</div>
+                    <div>LaDoga Recovery</div>
+                    <div class="flex items-center gap-x-2">Allied Solutions <span class="text-xs text-zinc-500">NEW WORKS COMMISSION</span></div>
+                    <div>Herbert Simon Family Foundation</div>
+                    <div>CICF — Central Indiana Community Foundation</div>
+                    <div>Arts for Learning Indiana</div>
+                    <div>Jacob's Pillow</div>
+                    <div class="text-xs text-zinc-500">+ many more...</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-black border-t border-zinc-800 pt-14 pb-8">
+        <div class="max-w-screen-2xl mx-auto px-8">
+            <div class="grid lg:grid-cols-12 gap-y-12">
+                
+                <!-- Brand -->
+                <div class="lg:col-span-4">
+                    <div class="flex items-center gap-x-3 mb-5">
+                        <div class="flex flex-col items-center justify-center w-9 h-9 border border-[#C9A227]/70 rounded-full">
+                            <span class="font-serif text-2xl leading-none text-[#C9A227]" style="font-family: 'Playfair Display', Georgia, serif;">JS</span>
+                        </div>
+                        <div>
+                            <div class="font-semibold tracking-[2.5px] text-sm">JUSTIN SEARS</div>
+                            <div class="text-[10px] text-zinc-500 -mt-0.5 tracking-[1.5px]">DANCE FOUNDATION</div>
+                        </div>
+                    </div>
+                    <p class="text-sm text-zinc-400 max-w-xs">
+                        Using movement, creativity, and storytelling to inspire healing, connection, recovery, education, and transformation.
+                    </p>
+                    
+                    <div class="flex gap-x-5 mt-6 text-xl text-zinc-400">
+                        <a href="https://instagram.com/jus10dance" target="_blank" class="hover:text-white transition-colors"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="hover:text-white transition-colors"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="hover:text-white transition-colors"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="mailto:justindavidsears@icloud.com" class="hover:text-white transition-colors"><i class="fa-solid fa-envelope"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Connect With Justin -->
+                <div class="lg:col-span-4">
+                    <div class="uppercase text-xs tracking-[2px] text-zinc-500 mb-4">CONNECT WITH JUSTIN</div>
+                    
+                    <div class="space-y-3 text-sm">
+                        <div>
+                            <a href="https://www.instagram.com/jus10dance?utm_source=qr" target="_blank" class="flex items-center gap-x-2 text-white hover:text-[#C9A227] transition-colors">
+                                <i class="fa-brands fa-instagram"></i>
+                                <span class="font-medium">Choreography &amp; Performance</span>
+                            </a>
+                        </div>
+                        <div>
+                            <a href="https://www.instagram.com/jus10danceco?utm_source=qr" target="_blank" class="flex items-center gap-x-2 text-white hover:text-[#C9A227] transition-colors">
+                                <i class="fa-brands fa-instagram"></i>
+                                <span class="font-medium">Education &amp; Community Engagement</span>
+                            </a>
+                        </div>
+                        <div>
+                            <a href="https://www.instagram.com/jus10danceacademy?utm_source=qr" target="_blank" class="flex items-center gap-x-2 text-white hover:text-[#C9A227] transition-colors">
+                                <i class="fa-brands fa-instagram"></i>
+                                <span class="font-medium">jus10danceacademy</span>
+                            </a>
+                        </div>
+                        <div class="pt-1">
+                            <a href="https://www.facebook.com/Jus10dance" target="_blank" class="flex items-center gap-x-2 text-white hover:text-[#C9A227] transition-colors">
+                                <i class="fa-brands fa-facebook-f"></i>
+                                <span class="font-medium">Facebook</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Contact -->
+                <div id="contact" class="lg:col-span-4">
+                    <div class="uppercase text-xs tracking-[2px] text-zinc-500 mb-4">CONTACT</div>
+                    <div class="space-y-2 text-sm">
+                        <div>Let's start the conversation.</div>
+                        <a href="mailto:justindavidsears@icloud.com" class="block text-[#C9A227] hover:underline">justindavidsears@icloud.com</a>
+                        <div class="text-zinc-400">Indianapolis, IN</div>
+                        
+                        <div class="pt-4">
+                            <a href="#contact" 
+                               onclick="showContactModal()"
+                               class="inline-block px-7 py-3 text-xs font-semibold tracking-[2px] border border-white/70 hover:bg-white hover:text-zinc-950 rounded-xl transition-colors">
+                                CONTACT US
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-16 pt-8 border-t border-zinc-800 text-xs text-zinc-500 flex flex-col md:flex-row justify-between gap-y-2">
+                <div>© 2026 Justin Sears Dance Foundation. All rights reserved.</div>
+                <div class="flex gap-x-5">
+                    <a href="#" class="hover:text-zinc-400">Privacy</a>
+                    <a href="#" class="hover:text-zinc-400">Accessibility</a>
+                    <a href="#" class="hover:text-zinc-400">Legal</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- VIDEO MODAL -->
+    <div id="video-modal" onclick="if (event.target.id === 'video-modal') hideVideoModal()"
+         class="hidden fixed inset-0 bg-black/90 z-[100] flex items-start sm:items-center justify-center p-4 overflow-y-auto">
+        <div onclick="event.stopImmediatePropagation()" class="modal bg-zinc-900 rounded-3xl max-w-4xl w-full overflow-hidden shadow-2xl my-auto">
+            <div class="flex justify-between items-center px-6 py-4 border-b border-zinc-800">
+                <div id="modal-video-title" class="font-semibold text-xl"></div>
+                <button onclick="hideVideoModal()" class="text-3xl leading-none text-zinc-400 hover:text-white">&times;</button>
+            </div>
+            <div class="aspect-video bg-black flex items-center justify-center" id="modal-video-content">
+                <!-- Dynamic content injected by JS -->
+            </div>
+            <div class="p-4 text-xs text-zinc-500 text-right">
+                <a href="https://vimeo.com/1202516891" target="_blank" class="hover:text-[#C9A227] transition-colors">View on Vimeo ↗</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- CONTACT MODAL -->
+    <div id="contact-modal" onclick="if (event.target.id === 'contact-modal') hideContactModal()" 
+         class="hidden fixed inset-0 bg-black/80 z-[100] flex items-center justify-center p-4">
+        <div onclick="event.stopImmediatePropagation()" class="modal bg-zinc-900 rounded-3xl max-w-lg w-full p-8">
+            <div class="flex justify-between mb-6">
+                <div>
+                    <div class="uppercase tracking-widest text-xs text-[#C9A227]">GET IN TOUCH</div>
+                    <h4 class="text-3xl font-bold tracking-tight">Let's start a conversation</h4>
+                </div>
+                <button onclick="hideContactModal()" class="text-3xl text-zinc-400 hover:text-white">&times;</button>
+            </div>
+            
+            <form id="contact-form" onsubmit="handleContactSubmit(event)">
+                <div class="space-y-4">
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label class="text-xs text-zinc-400 block mb-1.5">FIRST NAME</label>
+                            <input type="text" required class="w-full bg-zinc-950 border border-zinc-700 rounded-xl px-4 py-3 text-sm focus:border-[#C9A227] outline-none">
+                        </div>
+                        <div>
+                            <label class="text-xs text-zinc-400 block mb-1.5">LAST NAME</label>
+                            <input type="text" required class="w-full bg-zinc-950 border border-zinc-700 rounded-xl px-4 py-3 text-sm focus:border-[#C9A227] outline-none">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="text-xs text-zinc-400 block mb-1.5">EMAIL ADDRESS</label>
+                        <input type="email" required class="w-full bg-zinc-950 border border-zinc-700 rounded-xl px-4 py-3 text-sm focus:border-[#C9A227] outline-none">
+                    </div>
+                    <div>
+                        <label class="text-xs text-zinc-400 block mb-1.5">ORGANIZATION / AFFILIATION</label>
+                        <input type="text" class="w-full bg-zinc-950 border border-zinc-700 rounded-xl px-4 py-3 text-sm focus:border-[#C9A227] outline-none">
+                    </div>
+                    <div>
+                        <label class="text-xs text-zinc-400 block mb-1.5">HOW CAN WE HELP?</label>
+                        <textarea rows="4" required class="w-full bg-zinc-950 border border-zinc-700 rounded-2xl px-4 py-3 text-sm focus:border-[#C9A227] outline-none resize-y"></textarea>
+                    </div>
+                </div>
+                
+                <button type="submit" 
+                        class="mt-6 w-full py-4 text-sm font-semibold tracking-[2px] gold-bg text-zinc-950 rounded-2xl hover:bg-[#A67C00] transition-colors">
+                    SEND MESSAGE
+                </button>
+                <p class="text-center text-xs text-zinc-500 mt-4">We typically respond within 48 hours.</p>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Tailwind script
+        function initializeTailwind() {
+            document.documentElement.style.setProperty('--accent-gold', '#C9A227');
+        }
+        
+        // Navbar scroll effect
+        function initNavbar() {
+            const navbar = document.getElementById('navbar');
+            
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 20) {
+                    navbar.classList.add('nav-scrolled', 'shadow-xl');
+                } else {
+                    navbar.classList.remove('nav-scrolled', 'shadow-xl');
+                }
+            });
+            
+            // Mobile menu
+            const mobileBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            mobileBtn.addEventListener('click', () => {
+                const isHidden = mobileMenu.classList.contains('hidden');
+                if (isHidden) {
+                    mobileMenu.classList.remove('hidden');
+                    mobileBtn.innerHTML = '<i class="fa-solid fa-times text-xl"></i>';
+                } else {
+                    mobileMenu.classList.add('hidden');
+                    mobileBtn.innerHTML = '<i class="fa-solid fa-bars text-xl"></i>';
+                }
+            });
+            
+            // Close mobile menu on link click
+            document.querySelectorAll('.mobile-nav-link').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                    mobileBtn.innerHTML = '<i class="fa-solid fa-bars text-xl"></i>';
+                });
+            });
+        }
+        
+        // Smooth scroll for anchor links
+        function initSmoothScroll() {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    const targetId = this.getAttribute('href').substring(1);
+                    const target = document.getElementById(targetId);
+                    
+                    if (target) {
+                        e.preventDefault();
+                        const offset = 80; // account for fixed nav
+                        const bodyRect = document.body.getBoundingClientRect().top;
+                        const elementPosition = target.getBoundingClientRect().top;
+                        const offsetPosition = elementPosition - bodyRect - offset;
+                        
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        }
+        
+        // Video Modal
+        let currentModal = null;
+        
+        function showVideoModal(type) {
+            // On non-desktop (< lg breakpoint), scroll to the embedded video section instead
+            if (type === 'hero-video' && window.innerWidth < 1024) {
+                const target = document.getElementById('featured-work');
+                if (target) {
+                    const offset = 80;
+                    const bodyRect = document.body.getBoundingClientRect().top;
+                    const elementPosition = target.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition - bodyRect - offset;
+                    window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+                }
+                return;
+            }
+
+            const modal = document.getElementById('video-modal');
+            const content = document.getElementById('modal-video-content');
+            const titleEl = document.getElementById('modal-video-title');
+
+            content.innerHTML = '';
+
+            if (type === 'hero-video' || type === 'edges-of-insanity') {
+                titleEl.textContent = type === 'hero-video' ? 'Featured Performance' : 'Edges of Insanity';
+
+                content.innerHTML = `
+                    <iframe src="https://player.vimeo.com/video/1202516891?h=245c2c2b41&autoplay=1&playsinline=1&title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479"
+                            width="100%" height="100%" frameborder="0"
+                            allow="autoplay; fullscreen; picture-in-picture; web-share" allowfullscreen
+                            playsinline></iframe>
+                `;
+            }
+
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            currentModal = modal;
+
+            // Close on escape
+            document.addEventListener('keydown', function handler(ev) {
+                if (ev.key === 'Escape') {
+                    hideVideoModal();
+                    document.removeEventListener('keydown', handler);
+                }
+            }, { once: true });
+        }
+
+        function hideVideoModal() {
+            const modal = document.getElementById('video-modal');
+            // Clear iframe src to stop playback
+            const iframe = modal.querySelector('iframe');
+            if (iframe) iframe.src = '';
+            modal.classList.remove('flex');
+            modal.classList.add('hidden');
+        }
+        
+        // Contact Modal
+        function showContactModal() {
+            const modal = document.getElementById('contact-modal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+        
+        function hideContactModal() {
+            const modal = document.getElementById('contact-modal');
+            modal.classList.remove('flex');
+            modal.classList.add('hidden');
+        }
+        
+        function handleContactSubmit(e) {
+            e.preventDefault();
+            const form = e.target;
+            
+            // Simulate sending
+            const originalText = form.querySelector('button').innerHTML;
+            form.querySelector('button').innerHTML = 'SENDING...';
+            form.querySelector('button').disabled = true;
+            
+            setTimeout(() => {
+                form.innerHTML = `
+                    <div class="text-center py-8">
+                        <i class="fa-solid fa-check-circle text-[#C9A227] text-5xl mb-4"></i>
+                        <h4 class="text-2xl font-semibold tracking-tight mb-2">Thank you!</h4>
+                        <p class="text-zinc-400">Your message has been received. We'll be in touch within 48 hours.</p>
+                    </div>
+                `;
+                
+                setTimeout(() => {
+                    hideContactModal();
+                    // Reset form for next time
+                    setTimeout(() => {
+                        location.reload(); // simple reset for demo
+                    }, 800);
+                }, 2200);
+            }, 1350);
+        }
+        
+        // Subscribe form
+        function handleSubscribe(e) {
+            e.preventDefault();
+            const form = e.target;
+            const email = document.getElementById('email-input').value;
+            const btn = form.querySelector('button');
+            
+            const originalText = btn.innerHTML;
+            btn.innerHTML = 'THANK YOU!';
+            btn.disabled = true;
+            
+            setTimeout(() => {
+                form.innerHTML = `
+                    <div class="text-center py-1 text-sm">
+                        <span class="text-[#C9A227]">You're subscribed!</span> We'll send updates to <span class="font-medium">${email}</span>.
+                    </div>
+                `;
+                
+                setTimeout(() => {
+                    // Reset after showing success
+                    form.outerHTML = `
+                        <form id="subscribe-form" onsubmit="handleSubscribe(event)" class="flex gap-2">
+                            <input type="email" id="email-input" required placeholder="Your email address" 
+                                   class="flex-1 bg-zinc-900 border border-zinc-700 focus:border-[#C9A227] text-sm px-4 py-3 rounded-xl outline-none placeholder:text-zinc-500">
+                            <button type="submit" 
+                                    class="px-6 py-3 text-sm font-semibold tracking-widest gold-bg text-zinc-950 rounded-xl hover:bg-[#A67C00] transition-colors whitespace-nowrap">
+                                SUBSCRIBE
+                            </button>
+                        </form>
+                    `;
+                }, 3800);
+            }, 900);
+        }
+        
+        // Fake resource download
+        function downloadResource(type) {
+            const btns = event.currentTarget;
+            const original = event.target.innerHTML;
+            
+            const messages = {
+                'curriculum': 'Workshop Curriculum PDF downloaded',
+                'recovery-guide': 'Recovery Through Movement Guide downloaded',
+                'toolkit': 'Partner Implementation Toolkit downloaded'
+            };
+            
+            const toast = document.createElement('div');
+            toast.className = `fixed bottom-6 left-1/2 -translate-x-1/2 bg-zinc-800 border border-zinc-700 text-sm px-6 py-3 rounded-2xl flex items-center gap-x-3 shadow-xl z-[200]`;
+            toast.innerHTML = `
+                <i class="fa-solid fa-check text-[#C9A227]"></i>
+                <span>${messages[type] || 'Resource downloaded'}</span>
+            `;
+            document.body.appendChild(toast);
+            
+            setTimeout(() => {
+                toast.style.transition = 'all 0.3s ease';
+                toast.style.opacity = '0';
+                setTimeout(() => toast.remove(), 300);
+            }, 2600);
+        }
+        
+        // Keyboard accessibility + init everything
+        function initializeEverything() {
+            initializeTailwind();
+            initNavbar();
+            initSmoothScroll();
+            
+            // Easter egg: logo click scrolls to top
+            const logo = document.querySelector('a[href="#hero"]');
+            if (logo) {
+                logo.addEventListener('click', (e) => {
+                    if (window.scrollY < 100) {
+                        e.preventDefault();
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }
+                });
+            }
+            
+            // Preload hero image hint
+            console.log('%c[Justin Sears Dance Foundation] Demo website initialized successfully. All interactive elements ready.', 'color:#555');
+            
+            // Optional: Show a subtle welcome toast once (commented for clean first load)
+            // setTimeout(() => { ... }, 4200);
+        }
+        
+        // Boot app
+        window.onload = initializeEverything;
+    </script>
+</body>
+</html>
